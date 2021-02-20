@@ -9,7 +9,7 @@
       <div v-on:click="juntarNumeros('7')" class="botao">7</div>
       <div v-on:click="juntarNumeros('8')" class="botao">8</div>
       <div v-on:click="juntarNumeros('9')" class="botao">9</div>
-      <div class="botao operadores">x</div>
+      <div v-on:click="multiplicar" class="botao operadores">x</div>
       <div v-on:click="juntarNumeros('4')" class="botao">4</div>
       <div v-on:click="juntarNumeros('5')" class="botao">5</div>
       <div v-on:click="juntarNumeros('6')" class="botao">6</div>
@@ -73,6 +73,10 @@ export default {
     },
     dividir() {
       this.operador = (num1, num2) => num1 / num2
+      this.setarValor()
+    },
+    multiplicar() {
+      this.operador = (num1, num2) => num1 * num2
       this.setarValor()
     }
   }
