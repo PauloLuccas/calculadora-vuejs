@@ -17,7 +17,7 @@
       <div v-on:click="juntarNumeros('1')" class="botao">1</div>
       <div v-on:click="juntarNumeros('2')" class="botao">2</div>
       <div v-on:click="juntarNumeros('3')" class="botao">3</div>
-      <div class="botao operadores">+</div>
+      <div v-on:click="somar" class="botao operadores">+</div>
       <div v-on:click="juntarNumeros('0')" class="botao zero">0</div>
       <div v-on:click="ponto" class="botao">.</div>
       <div v-on:click="resultado" class="botao operadores">=</div>
@@ -81,6 +81,10 @@ export default {
     },
     diminuir() {
       this.operador = (num1, num2) => num1 - num2
+      this.setarValor()
+    },
+    somar() {
+      this.operador = (num1, num2) => num1 + num2
       this.setarValor()
     }
   }
