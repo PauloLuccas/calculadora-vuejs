@@ -19,7 +19,7 @@
       <div v-on:click="juntarNumeros('3')" class="botao">3</div>
       <div class="botao operadores">+</div>
       <div v-on:click="juntarNumeros('0')" class="botao zero">0</div>
-      <div class="botao">.</div>
+      <div v-on:click="ponto" class="botao">.</div>
       <div class="botao operadores">=</div>
     </div>
   </div>
@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      valorCorrente: '150',
+      valorCorrente: '',
       numeroAnterior: null,
       operador: null,
       operadorClicado: false
@@ -54,6 +54,11 @@ export default {
       }
 
       this.valorCorrente = `${this.valorCorrente}${numero}`
+    },
+    ponto() {
+      if (this.valorCorrente.indexOf('.') === -1) {
+        this.juntarNumeros('.')
+      }
     }
   }
 }
@@ -82,6 +87,7 @@ export default {
   background-color: #f2f2f2;
   border: 1px solid #999;
   line-height: 50px;
+  cursor: pointer;
 }
 .operadores {
   background-color: orange;
