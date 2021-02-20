@@ -5,7 +5,7 @@
       <div v-on:click="limpar" class="botao">C</div>
       <div v-on:click="sinal" class="botao">+/-</div>
       <div v-on:click="porcentagem" class="botao">%</div>
-      <div class="botao operadores">/</div>
+      <div v-on:click="dividir" class="botao operadores">/</div>
       <div v-on:click="juntarNumeros('7')" class="botao">7</div>
       <div v-on:click="juntarNumeros('8')" class="botao">8</div>
       <div v-on:click="juntarNumeros('9')" class="botao">9</div>
@@ -70,6 +70,10 @@ export default {
         parseFloat(this.valorCorrente)
       )}`
       this.numeroAnterior = null
+    },
+    dividir() {
+      this.operador = (num1, num2) => num1 / num2
+      this.setarValor()
     }
   }
 }
