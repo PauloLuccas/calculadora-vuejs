@@ -59,6 +59,10 @@ export default {
       if (this.valorCorrente.indexOf('.') === -1) {
         this.juntarNumeros('.')
       }
+    },
+    setarValor() {
+      this.numeroAnterior = this.valorCorrente
+      this.operadorClicado = true
     }
   }
 }
