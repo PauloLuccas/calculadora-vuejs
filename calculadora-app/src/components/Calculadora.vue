@@ -4,7 +4,7 @@
       <div class="display">{{valorCorrente || '0'}}</div>
       <div v-on:click="limpar" class="botao">C</div>
       <div v-on:click="sinal" class="botao">+/-</div>
-      <div class="botao">%</div>
+      <div v-on:click="porcentagem" class="botao">%</div>
       <div class="botao operadores">/</div>
       <div class="botao">7</div>
       <div class="botao">8</div>
@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      valorCorrente: '-50',
+      valorCorrente: '150',
       numeroAnterior: null,
       operador: null,
       operadorClicado: false
@@ -43,6 +43,9 @@ export default {
       this.valorCorrente = this.valorCorrente.charAt(0) === '-'
         ? this.valorCorrente.slice(1)
         : `-${this.valorCorrente}`
+    },
+    porcentagem() {
+      this.valorCorrente = `${parseFloat(this.valorCorrente) / 100}`
     }
   }
 }
