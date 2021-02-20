@@ -20,7 +20,7 @@
       <div class="botao operadores">+</div>
       <div v-on:click="juntarNumeros('0')" class="botao zero">0</div>
       <div v-on:click="ponto" class="botao">.</div>
-      <div class="botao operadores">=</div>
+      <div v-on:click="resultado" class="botao operadores">=</div>
     </div>
   </div>
 </template>
@@ -63,6 +63,13 @@ export default {
     setarValor() {
       this.numeroAnterior = this.valorCorrente
       this.operadorClicado = true
+    },
+    resultado() {
+      this.valorCorrente = `${this.operador(
+        parseFloat(this.numeroAnterior),
+        parseFloat(this.valorCorrente)
+      )}`
+      this.numeroAnterior = null
     }
   }
 }
