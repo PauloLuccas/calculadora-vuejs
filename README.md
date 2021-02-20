@@ -1,5 +1,6 @@
 # Calculadora em Vue.js 
 
+
 ## Recursos Utilizados no Desenvolvimento da Aplicação 🚀
 
 * **[Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=javascript-0000-gllemos)**
