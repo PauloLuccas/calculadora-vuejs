@@ -2,8 +2,8 @@
   <div>
     <div class="calculadora">
       <div class="display">{{valorCorrente || '0'}}</div>
-      <div class="botao">C</div>
-      <div class="botao">+/-</div>
+      <div v-on:click="limpar" class="botao">C</div>
+      <div v-on:click="sinal" class="botao">+/-</div>
       <div class="botao">%</div>
       <div class="botao operadores">/</div>
       <div class="botao">7</div>
@@ -29,9 +29,22 @@
 export default {
   data() {
     return {
-      valorCorrente: '123',
-    };
+      valorCorrente: '-50',
+      numeroAnterior: null,
+      operador: null,
+      operadorClicado: false
+    }
   },
+  methods: {
+    limpar() {
+      this.valorCorrente = ''
+    },
+    sinal() {
+      this.valorCorrente = this.valorCorrente.charAt(0) === '-'
+        ? this.valorCorrente.slice(1)
+        : `-${this.valorCorrente}`
+    }
+  }
 }
 </script>
 
