@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Calculadora from '@/components/Calculadora'
+import Index from '@/components/Index'
 
 Vue.use(Router)
 
@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'Calculadora',
-      component: Calculadora
+      component: Index
     }
   ]
 })
